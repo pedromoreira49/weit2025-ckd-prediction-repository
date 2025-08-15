@@ -115,8 +115,8 @@ df_fuzzy[numeric_cols] = scaler.fit_transform(df_fuzzy[numeric_cols])
 # Converter colunas binárias para float
 df_fuzzy[binary_cols] = df_fuzzy[binary_cols].astype(float)
 
-X = df.drop('class', axis = 1)
-y = df['class']
+X = df_fuzzy.drop('class', axis = 1)
+y = df_fuzzy['class']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
 
